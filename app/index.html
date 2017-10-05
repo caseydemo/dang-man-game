@@ -2,66 +2,68 @@
 <html>
 <head>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-	<script
-	src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
-
-	<script src="main.js"></script>
-	<link rel="stylesheet" href="style.css">
+	
+	<link rel="stylesheet" href="css/style.css">
 
 	<title>hangman</title>
 </head>
-<body class="container">
+<body>
 
-<div class="hangman">
+<div id="vue-app" v-bind:class="{ 'active': bgcolor == 'green' }">
+
 <h1>Hangman</h1>
 
-<!-- 10, 9, 7 -->
+<p>{{word}}</p>
+<p id="blankSpaces">this is where the empty spaces will be</p>
+
 <div class="row">
-	<button class="letter" id="clickme">a</button>
-<p id="demo"></p>
-
-
-
-	<button >a</button>
-    <button >b</button>
-    <button >c</button>
-    <button >d</button>
-	<button >e</button>
-    <button >f</button>
-    <button >g</button>
-    <button >h</button>
-	<button >i</button>
-    <button >j</button>
-    <button >k</button>
-    <button >l</button>
-</div>
-<br>
-<div class="row">
-	<button >m</button>
-    <button >n</button>
-    <button >o</button>
-    <button >p</button>
-	<button >q</button>
-    <button >r</button>
-    <button >s</button>
-    <button >t</button>
-	<button >u</button>
-    <button >v</button>
-    <button >w</button>
-    <button >x</button>
-	<button >y</button>
-    <button >z</button>
+	<button v-on:click="checkLetter('a')">a</button>
+    <button v-on:click="checkLetter('b')">b</button>
+    <button v-on:click="checkLetter('c')">c</button>
+    <button v-on:click="checkLetter('d')">d</button>
+	<button v-on:click="checkLetter('e')">e</button>
+    <button v-on:click="checkLetter('f')">f</button>
+    <button v-on:click="checkLetter('g')">g</button>
+    <button v-on:click="checkLetter('h')">h</button>
+	<button v-on:click="checkLetter('i')">i</button>
+    <button v-on:click="checkLetter('j')">j</button>
+    <button v-on:click="checkLetter('k')">k</button>
+    <button v-on:click="checkLetter('l')">l</button>
 </div>
 
+
+<div class="row">
+	<button v-on:click="checkLetter('m')">m</button>
+    <button v-on:click="checkLetter('n')">n</button>
+    <button v-on:click="checkLetter('o')">o</button>
+    <button v-on:click="checkLetter('p')">p</button>
+	<button v-on:click="checkLetter('q')">q</button>
+    <button v-on:click="checkLetter('r')">r</button>
+    <button v-on:click="checkLetter('s')">s</button>
+    <button v-on:click="checkLetter('t')">t</button>
+	<button v-on:click="checkLetter('u')">u</button>
+    <button v-on:click="checkLetter('v')">v</button>
+    <button v-on:click="checkLetter('w')">w</button>
+    <button v-on:click="checkLetter('x')">x</button>
+	<button v-on:click="checkLetter('y')">y</button>
+    <button v-on:click="checkLetter('z')">z</button>
+
+</div>
+
+<!-- v-bind:class="{ 'active': bgcolor == 'green' }"  -->
+
+
+<div class="container">
+	<button v-on:click="bgcolor = 'green'">green?</button>
+	<button v-on:click="bgcolor = 'gray'">gray</button>
+	<button v-on:click="reset">give up?</button>
+</div>
+
+</div>
+
+<!--Vue cdn has to be above local scripts -->
+<script src="https://unpkg.com/vue"></script> 
+<script src="js/main.js"></script>
 
 </body>
 </html>
