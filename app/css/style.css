@@ -23,3 +23,6 @@ p{
 .active{
 	background-color: #4f953b;
 }
+#hideMe{
+	display:none;
+}

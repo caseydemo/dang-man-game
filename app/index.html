@@ -13,8 +13,11 @@
 
 <h1>Hangman</h1>
 
-<p>{{word}}</p>
+<p id="hideMe">{{ hiddenWord }}</p>
+
+
 <p id="blankSpaces">this is where the empty spaces will be</p>
+
 
 <div class="row">
 	<button v-on:click="checkLetter('a')">a</button>
