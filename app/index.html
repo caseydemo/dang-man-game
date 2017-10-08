@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-
-	
-	<link rel="stylesheet" href="css/style.css">
-
-	<title>hangman</title>
+    <title>Dang-man</title>
+    <!-- Bootstrap CSS CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- My CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--Bootstrap JS CDN-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-<body>
 
-<div id="vue-app" v-bind:class="{ 'active': bgcolor == 'green' }">
+<body class="container">
+     
 
-<h1>Hangman</h1>
+	<!-- this is the area for user input -->
+    <div class="row" id="guessBox">
 
-<p id="hideMe">{{ hiddenWord }}</p>
+        <h3>Take your best guess, Pal:</h3>
 
+        <!-- this input box will submit when the enter key is pressed and released -->
+        <input type="text" class="guessInput" maxlength="1" id="guess" onfocus="value=''" onkeydown="if (
 
-<p id="blankSpaces">this is where the empty spaces will be</p>
-
-
-<div class="row">
-	<button v-on:click="checkLetter('a')">a</button>
-    <button v-on:click="checkLetter('b')">b</button>
-    <button v-on:click="checkLetter('c')">c</button>
-    <button v-on:click="checkLetter('d')">d</button>
-	<button v-on:click="checkLetter('e')">e</button>
-    <button v-on:click="checkLetter('f')">f</button>
-    <button v-on:click="checkLetter('g')">g</button>
-    <button v-on:click="checkLetter('h')">h</button>
-	<button v-on:click="checkLetter('i')">i</button>
-    <button v-on:click="checkLetter('j')">j</button>
-    <button v-on:click="checkLetter('k')">k</button>
-    <button v-on:click="checkLetter('l')">l</button>
-</div>
+        	// this is the snippet that submits on enter key press
+        	event.keyCode == 13) { makeGuess(); }; value=''">
 
 
-<div class="row">
-	<button v-on:click="checkLetter('m')">m</button>
-    <button v-on:click="checkLetter('n')">n</button>
-    <button v-on:click="checkLetter('o')">o</button>
-    <button v-on:click="checkLetter('p')">p</button>
-	<button v-on:click="checkLetter('q')">q</button>
-    <button v-on:click="checkLetter('r')">r</button>
-    <button v-on:click="checkLetter('s')">s</button>
-    <button v-on:click="checkLetter('t')">t</button>
-	<button v-on:click="checkLetter('u')">u</button>
-    <button v-on:click="checkLetter('v')">v</button>
-    <button v-on:click="checkLetter('w')">w</button>
-    <button v-on:click="checkLetter('x')">x</button>
-	<button v-on:click="checkLetter('y')">y</button>
-    <button v-on:click="checkLetter('z')">z</button>
+        <button class="btn" id="submitButton" type="submit">Submit</button>
+        
 
-</div>
+        <!-- <div id="wordScreen">
+            <div id="wordToGuess">
+                <h3>The dang word:</h3>
 
-<!-- v-bind:class="{ 'active': bgcolor == 'green' }"  -->
+                // this is where the blank spaces will be displayed
+                <!-- <div id="wordSpaces">
+                </div>
+            </div>
+        </div> -->
+
+        <div id="displayResult">ah Dangit! you win... I guess...</div>
+    </div>
+    <img src="../images/thumbs-up.jpg" id="updateImage">
+    <div class="row">
+        <div class="col-xs-12" id="previousGuesses">
+        </div>
+    </div>
+    </div>
+    </div>
 
 
-<div class="container">
-	<button v-on:click="bgcolor = 'green'">green?</button>
-	<button v-on:click="bgcolor = 'gray'">gray</button>
-	<button v-on:click="reset">give up?</button>
-</div>
+    <!-- // this is where the blank spaces will be displayed -->
+                <div id="wordSpaces">
+                </div>
 
-</div>
-
-<!--Vue cdn has to be above local scripts -->
-<script src="https://unpkg.com/vue"></script> 
-<script src="js/main.js"></script>
-
+      <!-- this is the "new grame" button -->
+    <div id="initializeGame">
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn" id="initializeGameButton">New Grame!</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
 </body>
+
 </html>
