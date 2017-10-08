@@ -14,57 +14,56 @@
 </head>
 
 <body class="container">
-     
 
-	<!-- this is the area for user input -->
-    <div class="row" id="guessBox">
+    <div class="row" id="guessBox">         <!--    GUESS BOX   -->
 
-        <h3>Take your best guess, Pal:</h3>
-
-        <!-- this input box will submit when the enter key is pressed and released -->
-        <input type="text" class="guessInput" maxlength="1" id="guess" onfocus="value=''" onkeydown="if (
-
-        	// this is the snippet that submits on enter key press
-        	event.keyCode == 13) { makeGuess(); }; value=''">
+         <!-- input box -->
+         <input type="text" class="guessInput" maxlength="1" id="guess" onfocus="value=''" onkeydown="if(event.keyCode == 13){ makeGuess(); }; value=''">
 
 
-        <button class="btn" id="submitButton" type="submit">Submit</button>
-        
 
-        <!-- <div id="wordScreen">
+         <!-- submit guess button -->
+         <button class="btn" id="submitButton" type="submit">Submit</button>
+
+
+         <!-- word screen -->
+         <div id="wordScreen">
             <div id="wordToGuess">
-                <h3>The dang word:</h3>
-
-                // this is where the blank spaces will be displayed
-                <!-- <div id="wordSpaces">
+                <h3>The Dang Word:</h3>
+                <div id="wordSpaces">
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <div id="displayResult">ah Dangit! you win... I guess...</div>
-    </div>
+        <!-- victory message -->
+        <div id="displayResult"> Dangit - you won! </div>
+
+    </div>                                  <!--    GUESS BOX   -->
+
+
+
+
+    <!-- main image -->
     <img src="../images/thumbs-up.jpg" id="updateImage">
+
+
     <div class="row">
         <div class="col-xs-12" id="previousGuesses">
         </div>
     </div>
-    </div>
-    </div>
 
-
-    <!-- // this is where the blank spaces will be displayed -->
-                <div id="wordSpaces">
+         <!-- start new grame button -->
+         <div id="initializeGame" >
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn" id="initializeGameButton">Start Grame</button>
                 </div>
-
-      <!-- this is the "new grame" button -->
-    <div id="initializeGame">
-        <div class="row">
-            <div class="col-xs-12">
-                <button class="btn" id="initializeGameButton">New Grame!</button>
             </div>
-        </div>
-    </div>
+        </div> 
     
+
+
+    <!-- call local js file -->
     <script src="js/main.js"></script>
 </body>
 

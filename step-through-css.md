@@ -1,7 +1,6 @@
-
+```
 body{
   background-color: #373737;
-  color: white;
 }
 
 /*h1 {
@@ -73,7 +72,7 @@ body{
 }
 
 #guessBox {
-	/*display:none;*/
+	display:none;
 	text-align:center;
 }
 
@@ -94,7 +93,7 @@ body{
 	background-color:#000000;
 	padding-top:3%;
 	padding-bottom:3%;
-	width: 25%;
+	/*border:4px solid #279CA9;*/
 }
 
 #initializeGame {
@@ -102,18 +101,16 @@ body{
 	margin-right:auto;
 	text-align:center;
 	padding-top:3%;
-
 }
 
 .guessInput {
 	text-align:center;
-	color: black;
 }
 
 #initializeGameButton {
 	width:40%;
 	font-size:130%;
-	background-color:black;
+	/*background-color:#1AADAB;*/
 	color:#ffffff;
 	border:2px solid #000;
 
